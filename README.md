@@ -135,3 +135,11 @@ But it is important to use it responsibly and ethically. Here are some guideline
 9. Document your scraping process thoroughly for replicability, transparency and accountability.
 
 10. Continuously re-evaluate your scraping program against applicable laws and ethical principles.
+
+## Changes Made by Wesley
+I decided to scrape the health section of thedp.com, specifically the top headline of the page. I changed the url passed into the request, since the original url was scraping the home page. I also changed the soup.find() to find just the "a" tag without any class, since the headline in the health section does not have any classes.
+
+## Cron Schedule Interpretation and Changes
+The initial cron expression 0 20 * * * means my job runs at 8:00 PM UTC every day. The five fields are minute, hour, day of month, month, and day of week.
+
+The new cron expression 0 8,20 * * * means my job runs at 8:00 AM and 8:00 PM UTC every day. The five fields are minute, hour, day of month, month, and day of week.
