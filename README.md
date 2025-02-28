@@ -137,7 +137,7 @@ But it is important to use it responsibly and ethically. Here are some guideline
 10. Continuously re-evaluate your scraping program against applicable laws and ethical principles.
 
 ## Changes Made by Wesley
-I decided to scrape the health section of thedp.com, specifically the top headline of the page. I changed the url passed into the request, since the original url was scraping the home page. I also changed the soup.find() to find just the "a" tag without any class, since the headline in the health section does not have any classes.
+I decided to scrape the health section of thedp.com, specifically the top headline of the page. I changed the url passed into the request, since the original url was scraping the home page. I also changed the script so that it first finds the h3 with class="standard-link", and then finds the single "a" tag within to extract the headline text. This is because the headline in the health section does not have any classes, so we cannot use the soup.find() function to find it directly.
 
 ## Cron Schedule Interpretation and Changes
 The initial cron expression 0 20 * * * means my job runs at 8:00 PM UTC every day. The five fields are minute, hour, day of month, month, and day of week.
